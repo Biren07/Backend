@@ -7,7 +7,7 @@ export async function parseResumeHandler(req, res) {
     const parsed = await parseResume(req.body.resumeText);
     res.json({ parsed });
   } catch (err) {
-    console.error('Resume parsing failed:', err); // ✅ log full error
+    console.error('Resume parsing failed:', err); 
     res.status(500).json({ error: 'AI resume parser failed.', details: err.message });
   }
 }

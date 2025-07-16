@@ -1,4 +1,4 @@
-// services/ai/cohereClient.js
+
 import { CohereClient } from 'cohere-ai';
 import dotenv from 'dotenv';
 

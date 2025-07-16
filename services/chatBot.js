@@ -1,5 +1,5 @@
-// services/ai/chatbot.js
-import cohere from './cohereClient.js'; // Make sure this file exists and sets the API key
+
+import cohere from './cohereClient.js';
 
 export default async function chatbot(message, userType = 'job_seeker') {
   const rolePrefix = userType === 'employer' ? 'Employer' : 'Job Seeker';

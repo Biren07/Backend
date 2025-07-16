@@ -1,4 +1,4 @@
-// services/ai/parseResume.js
+
 import cohere from './cohereClient.js';
 
 export default async function parseResume(text) {
@@ -33,7 +33,7 @@ ${text}
     try {
       return JSON.parse(result);
     } catch {
-      return { raw: result }; // fallback if not valid JSON
+      return { raw: result };
     }
   } catch (err) {
     console.error('Cohere resume parsing failed:', err);

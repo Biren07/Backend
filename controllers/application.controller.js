@@ -10,7 +10,8 @@ export const applyJob = async (req, res) => {
         .status(400)
         .json({ message: "Invalid job id", success: false });
     }
-    // check if the user already has applied for this job
+
+// the user already has applied for this job
     const existingApplication = await Application.findOne({
       job: jobId,
       applicant: userId,
@@ -21,12 +22,13 @@ export const applyJob = async (req, res) => {
         success: false,
       });
     }
-    //check if the job exists or not
+    //if the job exists or not
     const job = await Job.findById(jobId);
     if (!job) {
       return res.status(404).json({ message: "Job not found", success: false });
     }
-    // create a new application
+    
+  
 
     const newApplication = await Application.create({
       job: jobId,
